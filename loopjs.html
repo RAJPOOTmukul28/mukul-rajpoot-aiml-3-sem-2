@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let student={
+         id:101,
+         name:"Naitik",
+         age:19,
+         isMarried:false,
+         address:{
+            streetNo:6,
+            area:"Bheem Nagar",
+            pincode:201009,
+            city:"Ghaziabad",
+
+         },
+         education:["B.tech", "Cse Aiml", 18,2025],
+         getInfo:function(){
+            return "my details are" + student.id + "and" + student.name;
+         },
+         examDone:null
+    
+         
+
+
+        };
+        console.log(student);
+        console.log(typeof(student));
+
+        //access object properties/key
+        console.log(student.address);
+        console.log(student.education);
+        console.log(student.getInfo);
+        //find object keys
+        console.log(delete student.name);
+        console.log(student);
+        let studentkeys=Object.keys(student);
+        console.log(studentkeys.length);
+        //using for loop
+        for(let i=0;i<studentkeys.length;i++){
+            console.log(student[studentkeys[i]]);
+        }
+        for(let x in student){
+            console.log(student[x]);
+        }
+        let myInfo=new Object();
+        myInfo.name="Naitik";
+        myInfo.isMarried="false";
+        myInfo.city="Ghaziabad";
+        console.log(myInfo.name);
+        // access object's property using [] notation
+      console.log(myInfo['age']);
+
+    </script>
+</body>
+</html>
