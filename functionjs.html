@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function in js</title>
+</head>
+<body>
+    <script>
+        function demo() {
+            console.log("Hello JS");
+        } 
+       /* demo();*/
+        // with para
+        function demo1(text) {
+            console.log("Hello +text");
+        }
+        /*demo1("React");*/
+
+        //with default para
+        function cal(a,b=9){
+            console.log("addition of two number is"+(a+b));
+
+        }
+        demo1("React");
+        demo();
+        cal(12);
+
+        // anonymous function
+
+        let msg=function() {
+            console.log("Hello JS");
+        };
+        msg();
+
+        // short code for above fn i.e arrow function
+        let msg1=()=>console.log("Hello function as an arrow");
+        msg();
+
+        // arrow function using multiline
+        let add=(a,b)=> {
+            console.log("first number is"+a);
+              console.log("number is"+a);
+            console.log("addition of two number is"+(a+b));
+        }
+        add(4,5);
+
+        // IIFE
+        (function() {
+            console.log("IIFE in JS");
+
+        })();
+      //  IIFE using arrow
+      (()=>console.log("IIFE using arrow")) ();
+      
+      // callback function
+
+      function mul(callback) {
+        var num1=10;
+        console.log("first value is"+num1);
+        var num2=20;
+          console.log("second value is"+num2);
+        var res=num1*num2;
+        callback(res);
+      }
+      function result(res) {
+       console.log("Multiplication is"+res);
+      }
+      mul(result);
+
+      // callback function using dettime API
+      function msg2(){
+       console.log ("Hello Call Back");
+       document.writeln("Hello");
+      }
+      function loading() {
+        document.writeln("loading......")
+      };
+      setTimeout(msg2,2000);
+      loading();
+
+      // map filter and reduce 
+
+      let num=[3,2,4];
+      let finalresult=num.map(n=>n*2);
+      console.log(finalresult)
+   
+      // filter method
+
+
+      let finalresult1=num.filter(n=>(n>3));
+      console.log(finalresult1);
+
+   // reduce
+
+   let finalresult2=num.reduce((total,n)=>total+n);
+   console.log(finalresult2);
+
+   // promises
+   let promise=new Promise(function(resolve,reject) {
+    let age=25;
+    if(age>=18){
+    resolve("Valid age");
+   } else{
+    reject("wait for next year");
+   }
+   });
+   promise.then(result=>console.log(result)).catch(error=>console.log(error));
+
+   // async await ...
+
+    async function userData() {
+        try{
+            let data=await fetch('https://dummyjson.com/products/1');
+            let updatedData=await data.json();
+            console.log(updateData);
+
+        }
+        catch(error){
+            console.log("Not fetched"+error);
+        }
+    }
+    userData();
+    // local storage
+
+    let userInfo={
+        name:"John",
+        age:23,
+        mob:9392209309309,
+        eMail:"rajput@gmail.com"
+    }
+    localStorage.setItem('prefrences',JSON.stringify(userInfo));
+
+    let storagepreference=JSON.parse(localStorage.getItem
+    ('preferences'));
+    console.log(storagePreference.name);
+    </script>
+</body>
+</html>
